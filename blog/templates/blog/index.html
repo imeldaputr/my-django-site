@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}
+    My Blog
+{% endblock %}
+
+
+{% block css_files %}
+    <!--<link rel="stylesheet" href="{% static "app.css" %}">-->
+    <link rel="stylesheet" href="{% static "blog/post.css" %}" />
+    <link rel="stylesheet" href="{% static "blog/index.css" %}" />
+{% endblock %}
+
+{% block content %}
+    <section id="welcome">
+        <header>
+            <img src="{% static "blog/images/woods.jpg" %}" alt="Imel - The Blogger" />
+            <h2>IMELDA'S BLOG</h2>
+        </header>
+        <p>Hi, it's Imel here. I love learning!</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>My Latest Thoughts</h2>
+        <ul>
+            {% for post in posts %}
+                {% include "blog/includes/post.html" %}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>What I Do</h2>
+        <p>I love cooking, traveling, and eating!</p>
+        <p>My favorite food is sushi hehe.</p>
+    </section>
+{% endblock %}
