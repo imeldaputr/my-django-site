@@ -33,7 +33,7 @@ class Author(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=150)
     excerpt = models.CharField(max_length=200)
-    image_name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to="posts", null=True)
     date = models.DateField(auto_now=True)  # Automatically set the date when the post is created or updated
     slug = models.SlugField(unique=True, db_index=True)  # Unique identifier for the post, used in URLs
     content = models.TextField(validators=[MinLengthValidator(10)])  # Content of the post with a minimum length of 10 characters
@@ -46,6 +46,18 @@ class Post(models.Model):
         return reverse("post_detail", args=[self.slug])
     
     
-    def __str__(self):
-        return self.title
+    # def __str__(self):
+    #     return self.title
+
+
+# 1:N with Post
+# Each post can have many comments,
+# but each comment belongst to one post
+class Comment(models.Model):
+    user_name = models.CharField(max_length=120) # Your Name
+    user_email = models.EmailField() # Your Email
+    text = models.TextField(max_length=400)
     
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name='comments'  # If a post is deleted, its comments are also deleted
+    )
