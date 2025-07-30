@@ -22,4 +22,5 @@ from django.conf import settings
 urlpatterns = [
     path('admin', admin.site.urls),
     path("", include("blog.urls"))  # Include the blog app's urls.py (http://localhost:8000/)
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # define the folder and url for media files
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
+  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
