@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.views import View
 from django.views.generic import ListView, DetailView
 from django.conf import settings
+import os
 
 from .models import Post
 from .forms import CommentForm
