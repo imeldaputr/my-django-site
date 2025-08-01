@@ -28,7 +28,7 @@ SECRET_KEY = getenv("DJANGO_SECRET_KEY", "fallback-secret-for-local")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = getenv("DJANGO_DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = getenv("DJANGO_ALLOWED_HOSTS", "*").split(",")
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
