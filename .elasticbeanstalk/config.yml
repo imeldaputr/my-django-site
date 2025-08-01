@@ -2,6 +2,8 @@ branch-defaults:
   ebissue:
     environment: django-site-env
     group_suffix: null
+  main:
+    environment: django-site-env
 global:
   application_name: my_django_site
   branch: null
