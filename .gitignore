@@ -1,5 +1,4 @@
 __pycache__
-my_site/settings.py
 venv/
 .venv/
 *.pyc

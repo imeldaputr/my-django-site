@@ -1,0 +1,5 @@
+85.8.70.98 - - [31/Jul/2025:11:50:58 +0000] "GET / HTTP/1.1" 502 150 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:140.0) Gecko/20100101 Firefox/140.0" "-"
+85.8.70.98 - - [31/Jul/2025:11:50:58 +0000] "GET / HTTP/1.1" 502 150 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:140.0) Gecko/20100101 Firefox/140.0" "-"
+85.8.70.98 - - [31/Jul/2025:11:50:58 +0000] "GET /favicon.ico HTTP/1.1" 502 150 "http://django-site-env.eba-adykuhcb.eu-central-1.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:140.0) Gecko/20100101 Firefox/140.0" "-"
+85.8.70.98 - - [31/Jul/2025:11:54:22 +0000] "GET / HTTP/1.1" 502 150 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:140.0) Gecko/20100101 Firefox/140.0" "-"
+85.8.70.98 - - [31/Jul/2025:11:57:34 +0000] "GET / HTTP/1.1" 502 150 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:140.0) Gecko/20100101 Firefox/140.0" "-"

@@ -127,10 +127,3 @@ class ReadLaterView(View):
         
         return HttpResponseRedirect("/") # Redirect to the home page after storing the post
     
-
-def list_uploads(request):
-    uploads_dir = settings.MEDIA_ROOT / "posts"
-    if not uploads_dir.exists():
-        return HttpResponse("Folder tidak ada.")
-    files = os.listdir(uploads_dir)
-    return HttpResponse("<br>".join(files))

@@ -1,0 +1,426 @@
+Jul 31 11:22:14 ip-172-31-27-161 web[2120]: [2025-07-31 11:22:14 +0000] [2120] [INFO] Starting gunicorn 23.0.0
+Jul 31 11:22:14 ip-172-31-27-161 web[2120]: [2025-07-31 11:22:14 +0000] [2120] [INFO] Listening at: http://127.0.0.1:8000 (2120)
+Jul 31 11:22:14 ip-172-31-27-161 web[2120]: [2025-07-31 11:22:14 +0000] [2120] [INFO] Using worker: gthread
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]: [2025-07-31 11:22:14 +0000] [2128] [INFO] Booting worker with pid: 2128
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]: [2025-07-31 11:22:14 +0000] [2128] [ERROR] Exception in worker process
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]: Traceback (most recent call last):
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    worker.init_process()
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    ~~~~~~~~~~~~~~~~~~~^^
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/workers/gthread.py", line 94, in init_process
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    super().init_process()
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    ~~~~~~~~~~~~~~~~~~~~^^
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/workers/base.py", line 135, in init_process
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    self.load_wsgi()
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    ~~~~~~~~~~~~~~^^
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    self.wsgi = self.app.wsgi()
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:                ~~~~~~~~~~~~~^^
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    self.callable = self.load()
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:                    ~~~~~~~~~^^
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    return self.load_wsgiapp()
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:           ~~~~~~~~~~~~~~~~~^^
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    return util.import_app(self.app_uri)
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/util.py", line 370, in import_app
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    mod = importlib.import_module(module)
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "/usr/lib64/python3.13/importlib/__init__.py", line 88, in import_module
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    return _bootstrap._gcd_import(name[level:], package, level)
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "/var/app/current/my_site/wsgi.py", line 16, in <module>
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    application = get_wsgi_application()
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    django.setup(set_prefix=False)
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/__init__.py", line 19, in setup
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:                      ^^^^^^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/conf/__init__.py", line 81, in __getattr__
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    self._setup(name)
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    ~~~~~~~~~~~^^^^^^
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/conf/__init__.py", line 68, in _setup
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    self._wrapped = Settings(settings_module)
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:                    ~~~~~~~~^^^^^^^^^^^^^^^^^
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/conf/__init__.py", line 166, in __init__
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    mod = importlib.import_module(self.SETTINGS_MODULE)
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "/usr/lib64/python3.13/importlib/__init__.py", line 88, in import_module
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:    return _bootstrap._gcd_import(name[level:], package, level)
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]:  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]: ModuleNotFoundError: No module named 'my_site.settings'
+Jul 31 11:22:14 ip-172-31-27-161 web[2128]: [2025-07-31 11:22:14 +0000] [2128] [INFO] Worker exiting (pid: 2128)
+Jul 31 11:22:14 ip-172-31-27-161 web[2120]: [2025-07-31 11:22:14 +0000] [2120] [ERROR] Worker (pid:2128) exited with code 3
+Jul 31 11:22:14 ip-172-31-27-161 web[2120]: [2025-07-31 11:22:14 +0000] [2120] [ERROR] Shutting down: Master
+Jul 31 11:22:14 ip-172-31-27-161 web[2120]: [2025-07-31 11:22:14 +0000] [2120] [ERROR] Reason: Worker failed to boot.
+Jul 31 11:22:15 ip-172-31-27-161 web[2173]: [2025-07-31 11:22:15 +0000] [2173] [INFO] Starting gunicorn 23.0.0
+Jul 31 11:22:15 ip-172-31-27-161 web[2173]: [2025-07-31 11:22:15 +0000] [2173] [INFO] Listening at: http://127.0.0.1:8000 (2173)
+Jul 31 11:22:15 ip-172-31-27-161 web[2173]: [2025-07-31 11:22:15 +0000] [2173] [INFO] Using worker: gthread
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]: [2025-07-31 11:22:15 +0000] [2177] [INFO] Booting worker with pid: 2177
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]: [2025-07-31 11:22:15 +0000] [2177] [ERROR] Exception in worker process
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]: Traceback (most recent call last):
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    worker.init_process()
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    ~~~~~~~~~~~~~~~~~~~^^
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/workers/gthread.py", line 94, in init_process
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    super().init_process()
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    ~~~~~~~~~~~~~~~~~~~~^^
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/workers/base.py", line 135, in init_process
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    self.load_wsgi()
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    ~~~~~~~~~~~~~~^^
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    self.wsgi = self.app.wsgi()
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:                ~~~~~~~~~~~~~^^
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    self.callable = self.load()
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:                    ~~~~~~~~~^^
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    return self.load_wsgiapp()
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:           ~~~~~~~~~~~~~~~~~^^
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    return util.import_app(self.app_uri)
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/util.py", line 370, in import_app
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    mod = importlib.import_module(module)
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "/usr/lib64/python3.13/importlib/__init__.py", line 88, in import_module
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    return _bootstrap._gcd_import(name[level:], package, level)
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "/var/app/current/my_site/wsgi.py", line 16, in <module>
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    application = get_wsgi_application()
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    django.setup(set_prefix=False)
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/__init__.py", line 19, in setup
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:                      ^^^^^^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/conf/__init__.py", line 81, in __getattr__
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    self._setup(name)
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    ~~~~~~~~~~~^^^^^^
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/conf/__init__.py", line 68, in _setup
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    self._wrapped = Settings(settings_module)
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:                    ~~~~~~~~^^^^^^^^^^^^^^^^^
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/conf/__init__.py", line 166, in __init__
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    mod = importlib.import_module(self.SETTINGS_MODULE)
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "/usr/lib64/python3.13/importlib/__init__.py", line 88, in import_module
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:    return _bootstrap._gcd_import(name[level:], package, level)
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]:  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]: ModuleNotFoundError: No module named 'my_site.settings'
+Jul 31 11:22:15 ip-172-31-27-161 web[2177]: [2025-07-31 11:22:15 +0000] [2177] [INFO] Worker exiting (pid: 2177)
+Jul 31 11:22:15 ip-172-31-27-161 web[2173]: [2025-07-31 11:22:15 +0000] [2173] [ERROR] Worker (pid:2177) exited with code 3
+Jul 31 11:22:15 ip-172-31-27-161 web[2173]: [2025-07-31 11:22:15 +0000] [2173] [ERROR] Shutting down: Master
+Jul 31 11:22:15 ip-172-31-27-161 web[2173]: [2025-07-31 11:22:15 +0000] [2173] [ERROR] Reason: Worker failed to boot.
+Jul 31 11:22:15 ip-172-31-27-161 web[2179]: [2025-07-31 11:22:15 +0000] [2179] [INFO] Starting gunicorn 23.0.0
+Jul 31 11:22:16 ip-172-31-27-161 web[2179]: [2025-07-31 11:22:16 +0000] [2179] [INFO] Listening at: http://127.0.0.1:8000 (2179)
+Jul 31 11:22:16 ip-172-31-27-161 web[2179]: [2025-07-31 11:22:16 +0000] [2179] [INFO] Using worker: gthread
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]: [2025-07-31 11:22:16 +0000] [2183] [INFO] Booting worker with pid: 2183
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]: [2025-07-31 11:22:16 +0000] [2183] [ERROR] Exception in worker process
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]: Traceback (most recent call last):
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    worker.init_process()
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    ~~~~~~~~~~~~~~~~~~~^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/workers/gthread.py", line 94, in init_process
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    super().init_process()
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    ~~~~~~~~~~~~~~~~~~~~^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/workers/base.py", line 135, in init_process
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    self.load_wsgi()
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    ~~~~~~~~~~~~~~^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    self.wsgi = self.app.wsgi()
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:                ~~~~~~~~~~~~~^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    self.callable = self.load()
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:                    ~~~~~~~~~^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    return self.load_wsgiapp()
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:           ~~~~~~~~~~~~~~~~~^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    return util.import_app(self.app_uri)
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/util.py", line 370, in import_app
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    mod = importlib.import_module(module)
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "/usr/lib64/python3.13/importlib/__init__.py", line 88, in import_module
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    return _bootstrap._gcd_import(name[level:], package, level)
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "/var/app/current/my_site/wsgi.py", line 16, in <module>
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    application = get_wsgi_application()
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    django.setup(set_prefix=False)
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/__init__.py", line 19, in setup
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:                      ^^^^^^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/conf/__init__.py", line 81, in __getattr__
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    self._setup(name)
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    ~~~~~~~~~~~^^^^^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/conf/__init__.py", line 68, in _setup
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    self._wrapped = Settings(settings_module)
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:                    ~~~~~~~~^^^^^^^^^^^^^^^^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/conf/__init__.py", line 166, in __init__
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    mod = importlib.import_module(self.SETTINGS_MODULE)
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "/usr/lib64/python3.13/importlib/__init__.py", line 88, in import_module
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:    return _bootstrap._gcd_import(name[level:], package, level)
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]:  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]: ModuleNotFoundError: No module named 'my_site.settings'
+Jul 31 11:22:16 ip-172-31-27-161 web[2183]: [2025-07-31 11:22:16 +0000] [2183] [INFO] Worker exiting (pid: 2183)
+Jul 31 11:22:16 ip-172-31-27-161 web[2179]: [2025-07-31 11:22:16 +0000] [2179] [ERROR] Worker (pid:2183) exited with code 3
+Jul 31 11:22:16 ip-172-31-27-161 web[2179]: [2025-07-31 11:22:16 +0000] [2179] [ERROR] Shutting down: Master
+Jul 31 11:22:16 ip-172-31-27-161 web[2179]: [2025-07-31 11:22:16 +0000] [2179] [ERROR] Reason: Worker failed to boot.
+Jul 31 11:22:16 ip-172-31-27-161 web[2185]: [2025-07-31 11:22:16 +0000] [2185] [INFO] Starting gunicorn 23.0.0
+Jul 31 11:22:16 ip-172-31-27-161 web[2185]: [2025-07-31 11:22:16 +0000] [2185] [INFO] Listening at: http://127.0.0.1:8000 (2185)
+Jul 31 11:22:16 ip-172-31-27-161 web[2185]: [2025-07-31 11:22:16 +0000] [2185] [INFO] Using worker: gthread
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]: [2025-07-31 11:22:16 +0000] [2189] [INFO] Booting worker with pid: 2189
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]: [2025-07-31 11:22:16 +0000] [2189] [ERROR] Exception in worker process
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]: Traceback (most recent call last):
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    worker.init_process()
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    ~~~~~~~~~~~~~~~~~~~^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/workers/gthread.py", line 94, in init_process
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    super().init_process()
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    ~~~~~~~~~~~~~~~~~~~~^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/workers/base.py", line 135, in init_process
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    self.load_wsgi()
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    ~~~~~~~~~~~~~~^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    self.wsgi = self.app.wsgi()
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:                ~~~~~~~~~~~~~^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    self.callable = self.load()
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:                    ~~~~~~~~~^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    return self.load_wsgiapp()
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:           ~~~~~~~~~~~~~~~~~^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    return util.import_app(self.app_uri)
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/util.py", line 370, in import_app
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    mod = importlib.import_module(module)
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "/usr/lib64/python3.13/importlib/__init__.py", line 88, in import_module
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    return _bootstrap._gcd_import(name[level:], package, level)
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "/var/app/current/my_site/wsgi.py", line 16, in <module>
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    application = get_wsgi_application()
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    django.setup(set_prefix=False)
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/__init__.py", line 19, in setup
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:                      ^^^^^^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/conf/__init__.py", line 81, in __getattr__
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    self._setup(name)
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    ~~~~~~~~~~~^^^^^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/conf/__init__.py", line 68, in _setup
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    self._wrapped = Settings(settings_module)
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:                    ~~~~~~~~^^^^^^^^^^^^^^^^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/conf/__init__.py", line 166, in __init__
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    mod = importlib.import_module(self.SETTINGS_MODULE)
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "/usr/lib64/python3.13/importlib/__init__.py", line 88, in import_module
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:    return _bootstrap._gcd_import(name[level:], package, level)
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]:  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]: ModuleNotFoundError: No module named 'my_site.settings'
+Jul 31 11:22:16 ip-172-31-27-161 web[2189]: [2025-07-31 11:22:16 +0000] [2189] [INFO] Worker exiting (pid: 2189)
+Jul 31 11:22:16 ip-172-31-27-161 web[2185]: [2025-07-31 11:22:16 +0000] [2185] [ERROR] Worker (pid:2189) exited with code 3
+Jul 31 11:22:16 ip-172-31-27-161 web[2185]: [2025-07-31 11:22:16 +0000] [2185] [ERROR] Shutting down: Master
+Jul 31 11:22:16 ip-172-31-27-161 web[2185]: [2025-07-31 11:22:16 +0000] [2185] [ERROR] Reason: Worker failed to boot.
+Jul 31 11:22:17 ip-172-31-27-161 web[2191]: [2025-07-31 11:22:17 +0000] [2191] [INFO] Starting gunicorn 23.0.0
+Jul 31 11:22:17 ip-172-31-27-161 web[2191]: [2025-07-31 11:22:17 +0000] [2191] [INFO] Listening at: http://127.0.0.1:8000 (2191)
+Jul 31 11:22:17 ip-172-31-27-161 web[2191]: [2025-07-31 11:22:17 +0000] [2191] [INFO] Using worker: gthread
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]: [2025-07-31 11:22:17 +0000] [2195] [INFO] Booting worker with pid: 2195
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]: [2025-07-31 11:22:17 +0000] [2195] [ERROR] Exception in worker process
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]: Traceback (most recent call last):
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    worker.init_process()
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    ~~~~~~~~~~~~~~~~~~~^^
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/workers/gthread.py", line 94, in init_process
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    super().init_process()
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    ~~~~~~~~~~~~~~~~~~~~^^
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/workers/base.py", line 135, in init_process
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    self.load_wsgi()
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    ~~~~~~~~~~~~~~^^
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    self.wsgi = self.app.wsgi()
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:                ~~~~~~~~~~~~~^^
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    self.callable = self.load()
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:                    ~~~~~~~~~^^
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    return self.load_wsgiapp()
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:           ~~~~~~~~~~~~~~~~~^^
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    return util.import_app(self.app_uri)
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/util.py", line 370, in import_app
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    mod = importlib.import_module(module)
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "/usr/lib64/python3.13/importlib/__init__.py", line 88, in import_module
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    return _bootstrap._gcd_import(name[level:], package, level)
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "/var/app/current/my_site/wsgi.py", line 16, in <module>
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    application = get_wsgi_application()
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    django.setup(set_prefix=False)
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/__init__.py", line 19, in setup
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:                      ^^^^^^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/conf/__init__.py", line 81, in __getattr__
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    self._setup(name)
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    ~~~~~~~~~~~^^^^^^
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/conf/__init__.py", line 68, in _setup
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    self._wrapped = Settings(settings_module)
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:                    ~~~~~~~~^^^^^^^^^^^^^^^^^
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/conf/__init__.py", line 166, in __init__
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    mod = importlib.import_module(self.SETTINGS_MODULE)
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "/usr/lib64/python3.13/importlib/__init__.py", line 88, in import_module
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:    return _bootstrap._gcd_import(name[level:], package, level)
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]:  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]: ModuleNotFoundError: No module named 'my_site.settings'
+Jul 31 11:22:17 ip-172-31-27-161 web[2195]: [2025-07-31 11:22:17 +0000] [2195] [INFO] Worker exiting (pid: 2195)
+Jul 31 11:22:17 ip-172-31-27-161 web[2191]: [2025-07-31 11:22:17 +0000] [2191] [ERROR] Worker (pid:2195) exited with code 3
+Jul 31 11:22:17 ip-172-31-27-161 web[2191]: [2025-07-31 11:22:17 +0000] [2191] [ERROR] Shutting down: Master
+Jul 31 11:22:17 ip-172-31-27-161 web[2191]: [2025-07-31 11:22:17 +0000] [2191] [ERROR] Reason: Worker failed to boot.
+Jul 31 11:22:18 ip-172-31-27-161 web[2197]: [2025-07-31 11:22:18 +0000] [2197] [INFO] Starting gunicorn 23.0.0
+Jul 31 11:22:18 ip-172-31-27-161 web[2197]: [2025-07-31 11:22:18 +0000] [2197] [INFO] Listening at: http://127.0.0.1:8000 (2197)
+Jul 31 11:22:18 ip-172-31-27-161 web[2197]: [2025-07-31 11:22:18 +0000] [2197] [INFO] Using worker: gthread
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]: [2025-07-31 11:22:18 +0000] [2201] [INFO] Booting worker with pid: 2201
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]: [2025-07-31 11:22:18 +0000] [2201] [ERROR] Exception in worker process
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]: Traceback (most recent call last):
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    worker.init_process()
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    ~~~~~~~~~~~~~~~~~~~^^
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/workers/gthread.py", line 94, in init_process
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    super().init_process()
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    ~~~~~~~~~~~~~~~~~~~~^^
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/workers/base.py", line 135, in init_process
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    self.load_wsgi()
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    ~~~~~~~~~~~~~~^^
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    self.wsgi = self.app.wsgi()
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:                ~~~~~~~~~~~~~^^
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    self.callable = self.load()
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:                    ~~~~~~~~~^^
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    return self.load_wsgiapp()
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:           ~~~~~~~~~~~~~~~~~^^
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    return util.import_app(self.app_uri)
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/util.py", line 370, in import_app
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    mod = importlib.import_module(module)
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "/usr/lib64/python3.13/importlib/__init__.py", line 88, in import_module
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    return _bootstrap._gcd_import(name[level:], package, level)
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "/var/app/current/my_site/wsgi.py", line 16, in <module>
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    application = get_wsgi_application()
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    django.setup(set_prefix=False)
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/__init__.py", line 19, in setup
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:                      ^^^^^^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/conf/__init__.py", line 81, in __getattr__
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    self._setup(name)
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    ~~~~~~~~~~~^^^^^^
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/conf/__init__.py", line 68, in _setup
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    self._wrapped = Settings(settings_module)
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:                    ~~~~~~~~^^^^^^^^^^^^^^^^^
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/django/conf/__init__.py", line 166, in __init__
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    mod = importlib.import_module(self.SETTINGS_MODULE)
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "/usr/lib64/python3.13/importlib/__init__.py", line 88, in import_module
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:    return _bootstrap._gcd_import(name[level:], package, level)
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]:  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]: ModuleNotFoundError: No module named 'my_site.settings'
+Jul 31 11:22:18 ip-172-31-27-161 web[2201]: [2025-07-31 11:22:18 +0000] [2201] [INFO] Worker exiting (pid: 2201)
+Jul 31 11:22:18 ip-172-31-27-161 web[2197]: [2025-07-31 11:22:18 +0000] [2197] [ERROR] Worker (pid:2201) exited with code 3
+Jul 31 11:22:18 ip-172-31-27-161 web[2197]: [2025-07-31 11:22:18 +0000] [2197] [ERROR] Shutting down: Master
+Jul 31 11:22:18 ip-172-31-27-161 web[2197]: [2025-07-31 11:22:18 +0000] [2197] [ERROR] Reason: Worker failed to boot.
+Jul 31 11:48:36 ip-172-31-27-161 web[4583]: /var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/util.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+Jul 31 11:48:36 ip-172-31-27-161 web[4583]:  import pkg_resources
+Jul 31 11:48:36 ip-172-31-27-161 web[4583]: Error: '' is not a valid port number.
+Jul 31 11:48:37 ip-172-31-27-161 web[4624]: /var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/util.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+Jul 31 11:48:37 ip-172-31-27-161 web[4624]:  import pkg_resources
+Jul 31 11:48:37 ip-172-31-27-161 web[4624]: Error: '' is not a valid port number.
+Jul 31 11:48:37 ip-172-31-27-161 web[4645]: /var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/util.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+Jul 31 11:48:37 ip-172-31-27-161 web[4645]:  import pkg_resources
+Jul 31 11:48:37 ip-172-31-27-161 web[4645]: Error: '' is not a valid port number.
+Jul 31 11:48:37 ip-172-31-27-161 web[4651]: /var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/util.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+Jul 31 11:48:37 ip-172-31-27-161 web[4651]:  import pkg_resources
+Jul 31 11:48:38 ip-172-31-27-161 web[4651]: Error: '' is not a valid port number.
+Jul 31 11:48:38 ip-172-31-27-161 web[4656]: /var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/util.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+Jul 31 11:48:38 ip-172-31-27-161 web[4656]:  import pkg_resources
+Jul 31 11:48:38 ip-172-31-27-161 web[4656]: Error: '' is not a valid port number.
+Jul 31 11:48:38 ip-172-31-27-161 web[4661]: /var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/util.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+Jul 31 11:48:38 ip-172-31-27-161 web[4661]:  import pkg_resources
+Jul 31 11:48:38 ip-172-31-27-161 web[4661]: Error: '' is not a valid port number.
+Jul 31 11:55:14 ip-172-31-27-161 web[5333]: /var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/util.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+Jul 31 11:55:14 ip-172-31-27-161 web[5333]:  import pkg_resources
+Jul 31 11:55:14 ip-172-31-27-161 web[5333]: Error: '' is not a valid port number.
+Jul 31 11:55:14 ip-172-31-27-161 web[5382]: /var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/util.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+Jul 31 11:55:14 ip-172-31-27-161 web[5382]:  import pkg_resources
+Jul 31 11:55:14 ip-172-31-27-161 web[5382]: Error: '' is not a valid port number.
+Jul 31 11:55:15 ip-172-31-27-161 web[5394]: /var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/util.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+Jul 31 11:55:15 ip-172-31-27-161 web[5394]:  import pkg_resources
+Jul 31 11:55:15 ip-172-31-27-161 web[5394]: Error: '' is not a valid port number.
+Jul 31 11:55:15 ip-172-31-27-161 web[5399]: /var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/util.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+Jul 31 11:55:15 ip-172-31-27-161 web[5399]:  import pkg_resources
+Jul 31 11:55:15 ip-172-31-27-161 web[5399]: Error: '' is not a valid port number.
+Jul 31 11:55:16 ip-172-31-27-161 web[5404]: /var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/util.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+Jul 31 11:55:16 ip-172-31-27-161 web[5404]:  import pkg_resources
+Jul 31 11:55:16 ip-172-31-27-161 web[5404]: Error: '' is not a valid port number.
+Jul 31 11:55:16 ip-172-31-27-161 web[5409]: /var/app/venv/staging-LQM1lest/lib64/python3.13/site-packages/gunicorn/util.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+Jul 31 11:55:16 ip-172-31-27-161 web[5409]:  import pkg_resources
+Jul 31 11:55:16 ip-172-31-27-161 web[5409]: Error: '' is not a valid port number.
