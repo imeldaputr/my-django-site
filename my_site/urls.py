@@ -24,3 +24,7 @@ urlpatterns = [
     path("", include("blog.urls"))  # Include the blog app's urls.py (http://localhost:8000/)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+# if settings.DEBUG:
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
+#                    + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

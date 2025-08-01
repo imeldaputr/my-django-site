@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.views import View
 from django.views.generic import ListView, DetailView
+from django.conf import settings
+import os
 
 from .models import Post
 from .forms import CommentForm
@@ -124,3 +126,4 @@ class ReadLaterView(View):
         request.session["stored_posts"] = stored_posts
         
         return HttpResponseRedirect("/") # Redirect to the home page after storing the post
+    
